@@ -1,0 +1,29 @@
+# ---------------------------------------------------------------------------
+# AegisAI - Python dependencies
+# Install with: pip install -r requirements.txt
+# ---------------------------------------------------------------------------
+
+# HTTP client (LLM calls and embedding API)
+requests>=2.31.0,<3.0
+
+# Numpy for cosine fallback (also used by faiss internals)
+numpy>=1.26.0,<2.0
+
+# Vector search backend (choose one; faiss-cpu is lighter)
+# faiss-cpu>=1.7.4        # FAISS - recommended for production
+# chromadb>=0.4.24         # Chroma - alternative backend
+
+# Environment variable loading (.env support in scripts/local dev)
+python-dotenv>=1.0.0,<2.0
+
+# ---------------------------------------------------------------------------
+# Testing
+# ---------------------------------------------------------------------------
+pytest>=7.4.0,<9.0
+pytest-cov>=4.1.0,<6.0
+
+# ---------------------------------------------------------------------------
+# Optional: type checking
+# ---------------------------------------------------------------------------
+# mypy>=1.8.0,<2.0
+# types-requests>=2.31.0
