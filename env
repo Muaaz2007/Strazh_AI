@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# AegisAI - Environment Variable Reference
+# Copy to .env and fill in real values before running.
+# ---------------------------------------------------------------------------
+
+# ---------------------------------------------------------------------------
+# Mistral LLM (REQUIRED)
+# ---------------------------------------------------------------------------
+
+# Your Mistral API key (required - obtain from https://console.mistral.ai)
+MISTRAL_API_KEY=jdpjuqVL7Agc91lPtqL17x0omNSk9RId
+
+# Base URL for the Mistral API endpoint
+# Swap this to point at a self-hosted or proxy endpoint if needed.
+# Adapter: intelligence/mistral_client.py -> _MistralAdapter.post()
+MISTRAL_BASE_URL=https://api.mistral.ai/v1
+
+# Model to use for audit analysis
+# Options: mistral-large-latest, mistral-small-latest, open-mistral-7b, etc.
+MISTRAL_MODEL=mistral-large-latest
+
+# Maximum tokens to generate per response
+MAX_TOKENS=1200
+
+# Per-attempt timeout in seconds
+LLM_TIMEOUT_SECONDS=60
+
+# Number of retry attempts on transient failures
+LLM_RETRY_ATTEMPTS=3
+
+# ---------------------------------------------------------------------------
+# Embedding model (used for both ingestion and retrieval)
+# ---------------------------------------------------------------------------
+
+# Embedding model identifier
+# "mistral-embed" uses the Mistral embeddings API
+# Set to any custom identifier if you swap the embedding backend
+EMBEDDING_MODEL=local-fallback
+
+# ---------------------------------------------------------------------------
+# Vector store / retrieval
+# ---------------------------------------------------------------------------
+
+# Path to the local vector store directory (created by ingest_embeddings.py)
+VECTOR_DB_PATH=knowledge/embeddings_store
+
+# Number of context passages to retrieve per audit request
+TOP_K_RETRIEVAL=6
+
+# Backend engine for vector search
+# Options: faiss (default), chroma
+VECTOR_DB_BACKEND=faiss
