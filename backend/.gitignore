@@ -1,0 +1,26 @@
+# Secrets
+.env
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
+*.egg-info/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Local knowledge store artifacts (usually large)
+knowledge/**/*.faiss
+knowledge/**/*.index
+knowledge/**/*.npy
+knowledge/**/*.jsonl
+knowledge/**/manifest.json
